@@ -1,0 +1,30 @@
+body{
+    font-family: 'Teko', sans-serif;
+}
+
+header{
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+main{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    height: 80vh;
+}
+
+main article{
+    font-size: 2rem;
+    flex: 1 1 auto;
+    align-self: center;
+    text-align: center;
+}
+
+#answer{
+    font-size: 5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #b31a1a;
+}
