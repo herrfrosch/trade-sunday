@@ -9,7 +9,7 @@ function sunday() {
 
             day.setDate(day.getDate() + 1);
 
-            for(let i = 0; i < 5; i++){
+            for (let i = 0; i < 5; i++) {
                 let isMonth = tradeSundays[i].getMonth() === day.getMonth();
                 if (isMonth == true) {
                     let thisDate = tradeSundays[i].getDate() === day.getDate();
@@ -18,7 +18,7 @@ function sunday() {
                     }
                 }
             }
-            
+
             if (day.getFullYear() != 2022) {
                 isIt = true;
             }
@@ -30,7 +30,7 @@ function sunday() {
         let found = find_next_sunday();
         if (found != null) {
             let month = found.getMonth() + 1;
-            if(found.getMonth() < 10){
+            if (found.getMonth() < 10) {
                 month = '0' + month;
             }
             return "następna niedziela handlowa: " + found.getDate() + '.' + month;
@@ -39,7 +39,6 @@ function sunday() {
         }
     }
 
-    let lg = (varb) => console.log(varb);
 
     let answer_place = document.getElementsByName("answer");
     let addt_info = document.getElementsByName("additional-info");
@@ -52,7 +51,7 @@ function sunday() {
     tradeSundays[2] = new Date(2022, 07, 28);
     tradeSundays[3] = new Date(2022, 11, 12);
     tradeSundays[4] = new Date(2022, 11, 18);
-    
+
     let tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
 
@@ -82,7 +81,6 @@ function sunday() {
         });
     } else {
 
-        lg(today.getDay());
         switch (today.getDay()) {
             case 0:
                 answer_place[0].innerHTML = "JUTRO PONIEDZIAŁEK,";
@@ -125,9 +123,11 @@ function sunday() {
     }
 }
 
-function nightmode(){
-    let today = new Date();
-    if (today.getHours() >= 22 || today.getHours() < 6){
+function nightmode() {
+
+    const today = new Date();    
+
+    if (today.getHours() >= 21 || today.getHours() < 6) {
         document.body.style.backgroundColor = '#000';
         document.body.style.color = '#fff';
     }
