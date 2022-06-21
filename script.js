@@ -84,11 +84,25 @@ function sunday() {
         switch (today.getDay()) {
             case 0:
                 answer_place[0].innerHTML = "JUTRO PONIEDZIAŁEK,";
-                let isDate;
+                let isDate, isMonth;
+
                 for (let i = 0; i < 5; i++) {
-                    isDate = today.getDate() === tradeSundays[i].getDate();
-                    if (isDate == true) {
-                        i = 5;
+
+                    isMonth = today.getMonth() === tradeSundays[i].getMonth();
+                    
+                    if (isMonth) {
+                    
+                        for (let j = 0; j < 5; j++) {
+                    
+                            let isSameMonth = tradeSundays[i].getMonth() === tradeSundays[j].getMonth();
+                            isDate = today.getDate() === tradeSundays[j].getDate();
+                    
+                            if (isDate && isSameMonth) {
+                                isDate = true;
+                                i = 5;
+                                j = 5;
+                            }
+                        }
                     }
                 }
                 addt_info[0].innerHTML = " ale dziś jest niedziela " + (isDate ? "handlowa" : "niehandlowa");
@@ -125,7 +139,7 @@ function sunday() {
 
 function nightmode() {
 
-    const today = new Date();    
+    const today = new Date();
 
     if (today.getHours() >= 21 || today.getHours() < 6) {
         document.body.style.backgroundColor = '#000';
