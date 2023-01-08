@@ -9,7 +9,7 @@ function sunday() {
 
             day.setDate(day.getDate() + 1);
 
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 7; i++) {
                 let isMonth = tradeSundays[i].getMonth() === day.getMonth();
                 if (isMonth == true) {
                     let thisDate = tradeSundays[i].getDate() === day.getDate();
@@ -19,7 +19,7 @@ function sunday() {
                 }
             }
 
-            if (day.getFullYear() != 2022) {
+            if (day.getFullYear() != 2023) {
                 isIt = true;
             }
         }
@@ -46,11 +46,14 @@ function sunday() {
     let today = new Date();
     let tradeSundays = new Array();
 
-    tradeSundays[0] = new Date(2022, 03, 24);
-    tradeSundays[1] = new Date(2022, 05, 26);
-    tradeSundays[2] = new Date(2022, 07, 28);
-    tradeSundays[3] = new Date(2022, 11, 12);
-    tradeSundays[4] = new Date(2022, 11, 18);
+    tradeSundays[0] = new Date(2023, 00, 29);
+    tradeSundays[1] = new Date(2023, 03, 02);
+    tradeSundays[2] = new Date(2023, 03, 30);
+    tradeSundays[3] = new Date(2023, 05, 25);
+    tradeSundays[4] = new Date(2023, 07, 27);
+    tradeSundays[5] = new Date(2023, 11, 17);
+    tradeSundays[6] = new Date(2023, 11, 24);
+    
 
     let tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
@@ -86,21 +89,21 @@ function sunday() {
                 answer_place[0].innerHTML = "JUTRO PONIEDZIAŁEK,";
                 let isDate, isMonth;
 
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 7; i++) {
 
                     isMonth = today.getMonth() === tradeSundays[i].getMonth();
                     
                     if (isMonth) {
                     
-                        for (let j = 0; j < 5; j++) {
+                        for (let j = 0; j < 7; j++) {
                     
                             let isSameMonth = tradeSundays[i].getMonth() === tradeSundays[j].getMonth();
                             isDate = today.getDate() === tradeSundays[j].getDate();
                     
                             if (isDate && isSameMonth) {
                                 isDate = true;
-                                i = 5;
-                                j = 5;
+                                i = 7;
+                                j = 7;
                             }
                         }
                     }
