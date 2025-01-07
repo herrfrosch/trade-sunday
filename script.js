@@ -19,7 +19,7 @@ function sunday() {
                 }
             }
 
-            if (day.getFullYear() != 2023) {
+            if (day.getFullYear() != 2025) {
                 isIt = true;
             }
         }
@@ -46,13 +46,14 @@ function sunday() {
     let today = new Date();
     let tradeSundays = new Array();
 
-    tradeSundays[0] = new Date(2023, 00, 29);
-    tradeSundays[1] = new Date(2023, 03, 02);
-    tradeSundays[2] = new Date(2023, 03, 30);
-    tradeSundays[3] = new Date(2023, 05, 25);
-    tradeSundays[4] = new Date(2023, 07, 27);
-    tradeSundays[5] = new Date(2023, 11, 17);
-    tradeSundays[6] = new Date(2023, 11, 24);
+    tradeSundays[0] = new Date(2025, 00, 26);
+    tradeSundays[1] = new Date(2025, 03, 13);
+    tradeSundays[2] = new Date(2025, 03, 27);
+    tradeSundays[3] = new Date(2025, 05, 29);
+    tradeSundays[4] = new Date(2025, 07, 31);
+    tradeSundays[5] = new Date(2025, 11, 07);
+    tradeSundays[6] = new Date(2025, 11, 14);
+    tradeSundays[7] = new Date(2025, 11, 21);
     
 
     let tomorrow = new Date();
